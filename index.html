@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mis XV Marbella</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- 🎬 PANTALLA DE ENTRADA -->
+<div id="inicio">
+    <div class="entrada">
+        <h1>Marbella</h1>
+        <p>Mis XV Años</p>
+        <button onclick="entrar()">Abrir Invitación</button>
+    </div>
+</div>
+
+<!-- 🎵 AUDIO -->
+<audio id="musica" loop>
+<source src="assets/cancion.mp3" type="audio/mp3">
+</audio>
+
+<!-- 🎵 BOTÓN -->
+<div class="musica" onclick="toggleMusica()">
+    <span id="icono">▶</span>
+</div>
+
+<div class="contenedor">
+
+<section class="bloque">
+    <p class="frase grande">
+        Te doy gracias Señor con todo mi corazón por permitirme llegar a este momento.
+        Yo proclamaré todas tus maravillas hoy y siempre.
+    </p>
+</section>
+
+<section class="bloque">
+    <h1>Marbella</h1>
+    <p class="sub">Mis XV Años</p>
+</section>
+
+<section class="bloque">
+    <p class="frase">
+        Con gran honor te invitamos a ser parte de esta gran celebración.
+    </p>
+</section>
+
+<section class="bloque">
+    <h2>Mis Padres</h2>
+    <p>Felipe Bello Barragan</p>
+    <p>Jaqueline Herrera Rivera</p>
+</section>
+
+<section class="bloque">
+    <h2>Mis Padrinos</h2>
+    <p>José Cupertino Amador Reyes</p>
+    <p>Jannet Ruiz Herrera</p>
+</section>
+
+<section class="bloque">
+    <h2>01 de Agosto de 2026</h2>
+    <p id="cuenta"></p>
+</section>
+
+<section class="bloque">
+    <h2>⛪ Ceremonia</h2>
+    <p>Catedral de Tehuacán</p>
+    <p>1:00 PM</p>
+
+    <p class="direccion">
+        C. 1 Sur 101, Centro, Tehuacán, Puebla
+    </p>
+
+    <a class="btn" href="https://www.google.com/maps?q=C. 1 Sur 101, Centro de la Ciudad, 75700 Tehuacán, Pue." target="_blank">
+        Ver ubicación
+    </a>
+</section>
+
+<section class="bloque">
+    <h2>🎉 Recepción</h2>
+    <p>Salón de eventos</p>
+    <p>3:00 PM</p>
+
+    <p class="direccion">
+        Boulevard Socorro Romero Sánchez #117<br>
+        San Lorenzo Teotipilco, Tehuacán, Puebla
+    </p>
+
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Salon+Real+de+Guille+San+Lorenzo+Tehuacan" target="_blank">
+    Ver ubicación
+</a>
+</section>
+
+<section class="bloque final">
+    <h1>Te esperamos</h1>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

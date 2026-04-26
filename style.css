@@ -1,0 +1,147 @@
+body{
+    margin:0;
+    font-family:'Playfair Display', serif;
+    color:#2c4f6b;
+    background:#f4f9ff;
+}
+
+/* 🎬 pantalla inicial */
+#inicio{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background: linear-gradient(to bottom, #e3f2ff, #f7fbff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.entrada{
+    text-align:center;
+}
+
+.entrada h1{
+    font-family:'Great Vibes', cursive;
+    font-size:90px;
+    color:#3b6f94;
+}
+
+.entrada p{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.entrada button{
+    padding:14px 35px;
+    border:none;
+    border-radius:30px;
+    background:#3b6f94;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* contenedor */
+.contenedor{
+    max-width:700px;
+    margin:auto;
+    padding:30px 15px;
+}
+
+/* bloques */
+.bloque{
+    padding:40px 20px;
+    margin:20px 0;
+
+    background:
+    radial-gradient(circle at top left, #d6ecff, transparent),
+    radial-gradient(circle at bottom right, #eaf4ff, transparent),
+    linear-gradient(to bottom, #e3f2ff, #f7fbff);
+
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    text-align:center;
+}
+
+/* nombre */
+h1{
+    font-family:'Great Vibes', cursive;
+    font-size:80px;
+    color:#3b6f94;
+    margin:0;
+}
+
+/* subtitulo */
+.sub{
+    font-size:24px;
+    letter-spacing:3px;
+}
+
+/* títulos */
+h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+/* texto */
+p{
+    font-size:20px;
+    margin:5px 0;
+}
+
+/* frase */
+.frase{
+    font-size:24px;
+    line-height:1.6;
+}
+
+.grande{
+    font-size:28px;
+}
+
+/* dirección */
+.direccion{
+    font-size:16px;
+    color:#555;
+    margin-top:10px;
+}
+
+/* botón */
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    border-radius:25px;
+    background:#3b6f94;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+}
+
+/* botón música */
+.musica{
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:55px;
+    height:55px;
+    background:#3b6f94;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.musica.playing{
+    animation: pulso 1.5s infinite;
+}
+
+@keyframes pulso{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+}
