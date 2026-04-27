@@ -1,16 +1,59 @@
 body{
     margin:0;
     font-family:'Playfair Display', serif;
-    color:#2c4f6b;
-    background:#f4f9ff;
+    background: radial-gradient(circle at top, #1a2748, #050b1a);
+    color:white;
+    overflow-x:hidden;
 }
 
-/* 🎬 pantalla inicial */
+/* ✨ partículas */
+.magia{
+    position:fixed;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+.particula{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    opacity:0.5;
+    animation: subir linear infinite;
+}
+
+@keyframes subir{
+    from{transform:translateY(100vh);opacity:0;}
+    50%{opacity:1;}
+    to{transform:translateY(-10vh);opacity:0;}
+}
+
+/* 👗 princesa */
+.princesa{
+    position:fixed;
+    bottom:0;
+    right:0;
+    width:220px;
+    opacity:0.9;
+}
+
+/* 🏰 castillo */
+.castillo{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:260px;
+    opacity:0.15;
+}
+
+/* 🎬 inicio */
 #inicio{
     position:fixed;
     width:100%;
     height:100vh;
-    background: linear-gradient(to bottom, #e3f2ff, #f7fbff);
+    background: radial-gradient(circle,#1a2748,#050b1a);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -21,127 +64,182 @@ body{
     text-align:center;
 }
 
-.entrada h1{
-    font-family:'Great Vibes', cursive;
+/* ✨ título elegante */
+.titulo{
+    font-family:'Great Vibes';
     font-size:90px;
-    color:#3b6f94;
+    color:#e6eeff;
+
+    letter-spacing:2px;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,0.4),
+        0 0 15px rgba(168,200,255,0.25);
 }
 
-.entrada p{
-    font-size:24px;
-    margin-bottom:20px;
-}
-
-.entrada button{
+/* botón bonito */
+.btn-entrar{
+    margin-top:20px;
     padding:14px 35px;
     border:none;
     border-radius:30px;
-    background:#3b6f94;
+    background:#6C8EBF;
     color:white;
     font-size:16px;
     cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-entrar:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
 }
 
 /* contenedor */
 .contenedor{
     max-width:700px;
     margin:auto;
-    padding:30px 15px;
+    padding:30px;
 }
 
 /* bloques */
 .bloque{
-    padding:40px 20px;
-    margin:20px 0;
+    margin:25px 0;
+    padding:40px 30px;
 
-    background:
-    radial-gradient(circle at top left, #d6ecff, transparent),
-    radial-gradient(circle at bottom right, #eaf4ff, transparent),
-    linear-gradient(to bottom, #e3f2ff, #f7fbff);
+    background:rgba(255,255,255,0.08);
+    border-radius:25px;
 
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.05);
-    text-align:center;
+    border:1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(8px);
+
+    transition: all 0.3s ease;
 }
 
-/* nombre */
-h1{
-    font-family:'Great Vibes', cursive;
-    font-size:80px;
-    color:#3b6f94;
-    margin:0;
+/* efecto elegante al pasar mouse */
+.bloque:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+/* textos */
+h2,p,.sub,.frase{
+    color:#f0f4ff;
 }
 
-/* subtitulo */
-.sub{
-    font-size:24px;
-    letter-spacing:3px;
-}
-
-/* títulos */
-h2{
-    font-size:30px;
-    margin-bottom:10px;
-}
-
-/* texto */
-p{
-    font-size:20px;
-    margin:5px 0;
-}
-
-/* frase */
-.frase{
-    font-size:24px;
-    line-height:1.6;
-}
-
-.grande{
-    font-size:28px;
-}
-
-/* dirección */
 .direccion{
-    font-size:16px;
-    color:#555;
-    margin-top:10px;
+    color:#cbd6ff;
 }
 
-/* botón */
+.cuenta{
+    font-size:28px;
+    font-weight:bold;
+}
+
+/* botones internos */
 .btn{
     display:inline-block;
-    margin-top:15px;
+    margin-top:10px;
     padding:10px 20px;
-    border-radius:25px;
-    background:#3b6f94;
+    background:#6C8EBF;
     color:white;
+    border-radius:25px;
     text-decoration:none;
-    font-size:16px;
 }
 
-/* botón música */
+/* música */
 .musica{
     position:fixed;
     top:20px;
     right:20px;
-    width:55px;
-    height:55px;
-    background:#3b6f94;
-    color:white;
+    width:50px;
+    height:50px;
+    background:#6C8EBF;
     border-radius:50%;
     display:flex;
     justify-content:center;
     align-items:center;
     cursor:pointer;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+/* centra todo el contenido */
+.contenedor{
+    max-width:700px;
+    margin:0 auto;
+    padding:40px 20px;
+    text-align:center;
 }
 
-.musica.playing{
-    animation: pulso 1.5s infinite;
+/* centra bloques */
+.bloque{
+    text-align:center;
 }
 
-@keyframes pulso{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.15);}
-    100%{transform:scale(1);}
+/* centra textos */
+h1, h2, p{
+    text-align:center;
+}
+
+p{
+    font-size:20px;
+    line-height:1.7;
+    margin:8px 0;
+}
+
+h2{
+    margin-bottom:10px;
+    letter-spacing:1px;
+}
+.btn, .btn-entrar{
+    background:#6C8EBF;
+    color:white;
+    border-radius:30px;
+    padding:12px 28px;
+
+    font-weight:500;
+    letter-spacing:1px;
+
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+
+.btn:hover, .btn-entrar:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.4);
+}
+.bloque:not(.final)::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:2px;
+    background:rgba(255,255,255,0.2);
+    margin:20px auto 0;
+    border-radius:2px;
+}
+/* ✨ animación base */
+.fade{
+    opacity:0;
+    transform:translateY(30px) scale(0.98);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+/* cuando aparece */
+.fade.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+/* delay progresivo */
+.fade:nth-child(1){ transition-delay: 0.1s; }
+.fade:nth-child(2){ transition-delay: 0.2s; }
+.fade:nth-child(3){ transition-delay: 0.3s; }
+.fade:nth-child(4){ transition-delay: 0.4s; }
+.fade:nth-child(5){ transition-delay: 0.5s; }
+.fade:nth-child(6){ transition-delay: 0.6s; }
+.fade:nth-child(7){ transition-delay: 0.7s; }
+
+/* hover elegante */
+.bloque:hover{
+    transform:translateY(-5px) scale(1.01);
 }

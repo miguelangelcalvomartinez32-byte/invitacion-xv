@@ -1,56 +1,58 @@
-const musica = document.getElementById("musica");
-const boton = document.querySelector(".musica");
-const icono = document.getElementById("icono");
+const musica=document.getElementById("musica");
+const icono=document.getElementById("icono");
+let reproduciendo=false;
 
-let reproduciendo = false;
-
-/* 🎬 entrar */
 function entrar(){
-    document.getElementById("inicio").style.display = "none";
+    let inicio=document.getElementById("inicio");
+    inicio.style.opacity="0";
+    setTimeout(()=>inicio.style.display="none",1000);
     iniciarMusica();
 }
 
-/* 🎵 música */
 function toggleMusica(){
     if(!reproduciendo){
         iniciarMusica();
     }else{
         musica.pause();
-        boton.classList.remove("playing");
-        icono.innerHTML = "▶";
-        reproduciendo = false;
+        icono.innerHTML="▶";
+        reproduciendo=false;
     }
 }
 
 function iniciarMusica(){
-    musica.volume = 0;
+    musica.volume=0;
     musica.play();
 
-    let vol = 0;
-    let fade = setInterval(()=>{
-        if(vol < 0.8){
-            vol += 0.05;
-            musica.volume = vol;
-        }else{
-            clearInterval(fade);
-        }
+    let vol=0;
+    let fade=setInterval(()=>{
+        if(vol<0.8){
+            vol+=0.05;
+            musica.volume=vol;
+        }else clearInterval(fade);
     },200);
 
-    boton.classList.add("playing");
-    icono.innerHTML = "⏸";
-    reproduciendo = true;
+    icono.innerHTML="⏸";
+    reproduciendo=true;
+}
+
+/* partículas */
+const magia=document.getElementById("magia");
+
+for(let i=0;i<50;i++){
+    let p=document.createElement("div");
+    p.classList.add("particula");
+    p.style.left=Math.random()*100+"vw";
+    p.style.animationDuration=(Math.random()*4+3)+"s";
+    magia.appendChild(p);
 }
 
 /* contador */
-const cuenta = document.getElementById("cuenta");
-const fecha = new Date("August 1, 2026 13:00:00").getTime();
+const cuenta=document.getElementById("cuenta");
+const fecha=new Date("August 1, 2026 13:00:00").getTime();
 
 setInterval(()=>{
-    let ahora = new Date().getTime();
-    let diff = fecha - ahora;
-
-    let d = Math.floor(diff/(1000*60*60*24));
-    let h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-
-    cuenta.innerHTML = `${d} días · ${h} hrs`;
+    let diff=fecha-new Date().getTime();
+    let d=Math.floor(diff/(1000*60*60*24));
+    let h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    cuenta.innerHTML=`${d} días · ${h} hrs`;
 },1000);
